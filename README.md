@@ -19,7 +19,7 @@ RTMPie é uma interface web de gerenciamento para o módulo RTMP NGINX.
 ## Instalação com auto instaler 
 ```bash
 # Baixe o script do instalador
-sudo wget https://files.karltec.com.br/streaming.sh
+sudo wget https://raw.github.com/CarlosMinho/rtmpie/main/streaming.sh
 # Dar as permições para o script
 sudo chmod 777 streaming.sh 
 # Executar o script

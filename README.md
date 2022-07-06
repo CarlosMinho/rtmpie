@@ -1,48 +1,62 @@
 # RTMPie
 
-RTMPie is a management web interface for the RTMP NGINX module.
+RTMPie é uma interface web de gerenciamento para o módulo RTMP NGINX.
 
 <p align="center">
   <img src="https://img.rtmpie.de/screen.png" alt="RTMPie screenshot">
 </p>
 
-### Features
+### Características
 
-- Get information about streams (live/offline, viewer count) in realtime
-- Simple user management
-- Stream key management to prevent unauthorized clients from streaming to the server
-- Kick the current publisher from a stream
-- Integrated stream player
-- Stream recording (coming soon)
-- Restrict stream playback to authenticated users (coming soon)
+- Obtenha informações sobre transmissões (ao vivo/offline, contagem de espectadores) em tempo real
+- Gerenciamento de usuários simples
+- Gerenciamento de chave de fluxo para impedir que clientes não autorizados transmitam para o servidor
+- Expulsar o editor atual de um stream
+- Leitor de stream integrado
+- Gravação de transmissão (em breve)
+- Restringir a reprodução de stream a usuários autenticados (em breve)
 
-## Installation
+## Instalação com auto instaler 
+```bash
+# Baixe o script do instalador
+sudo wget https://files.karltec.com.br/streaming.sh
+# Dar as permições para o script
+sudo chmod 777 streaming.sh 
+# Executar o script
+./streaming.sh
+```
 
-The official installation method is using [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/). Please install both tools according to their documentation.
+## Método de instalação oficial
 
-If you want to make RTMPie available under a publicly accessible domain (e.g. demo.rtmpie.de), make sure to set up the necessary DNS settings before continuing.
+O método de instalação oficial está usando [Docker](https://docs.docker.com/engine/install/) e [Docker Compose](https://docs.docker.com/compose/). Por favor instale
+ambas as ferramentas de acordo com sua documentação.
 
-When Docker is installed, proceed with installing RTMPie:
+Se você deseja disponibilizar o RTMPie em um domínio acessível publicamente (por exemplo, demo.rtmpie.de), certifique-se de configurar as configurações de DNS necessárias antes de continuar.
+
+Quando o Docker estiver instalado, prossiga com a instalação do RTMPie:
 ```bash
 mkdir /opt/rtmpie
 cd /opt/rtmpie
 
-# Download the small installer script
+# Baixe o pequeno script do instalador
 wget https://raw.githubusercontent.com/ngrie/rtmpie/main/setup.sh
-bash setup.sh # Answer the questions
+bash setup.sh # Responda às perguntas
 
-# Run the docker setup
+# Execute a configuração do docker
 docker-compose pull
 docker-compose up -d
 ```
 
-The webinteface will be available after a few seconds and you can login using the default credentials `admin / admin`.
+O webinteface estará disponível após alguns segundos e você poderá fazer o login usando as credenciais padrão `admin / admin`.
 
-## Credits
+## Créditos
 
-RTMPie was built using the following projects:
+O RTMPie foi construído usando os seguintes projetos:
 
-- [nginx-http-flv-module](https://github.com/winshining/nginx-http-flv-module) (thanks to [arut](https://github.com/arut) for creating the original module and [winshining](https://github.com/winshining) for maintaining the further developed fork)
-- [Symfony](https://symfony.com) and [API Platform](https://api-platform.com)
+- [auto-instaler](https://karltec.com.br)
+
+- [nginx-http-flv-module](https://github.com/winshining/nginx-http-flv-module) (graças a [arut](https://github.com/arut) para criar o módulo original e
+- [winshining](https://github.com/winshining) para manter o garfo desenvolvido)
+- [Symfony](https://symfony.com) e [API Platform](https://api-platform.com)
 - [Vue.js](https://vuejs.org)
-- [Tailwind CSS](https://tailwindcss.com) and [Tailwind UI](https://tailwindui.com)
+- [Tailwind CSS](https://tailwindcss.com) e [Tailwind UI](https://tailwindui.com)
